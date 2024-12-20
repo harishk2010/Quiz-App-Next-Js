@@ -16,7 +16,13 @@ const Score = () => {
         >
           Play Again
         </button>
-      </div>
+        <button
+          onClick={() => (window.location.href = "/next")}
+          className="px-6 py-3 bg-indigo-500 text-white rounded-lg font-medium hover:bg-indigo-600 transition duration-200"
+        >
+          next
+        </button>
+      </div>  
     </div>
   );
 };

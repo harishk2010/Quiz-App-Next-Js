@@ -8,36 +8,36 @@ interface Quiz extends Document {
   answer: string;
 }
 
-// Define the schema for the quiz data
+
 const quizSchema = new Schema<Quiz>({
   quizTitle: {
     type: String,
     required: true,
-    trim: true, // Trimming leading/trailing whitespace
+    trim: true, 
   },
   question: {
     type: String,
     required: true,
-    trim: true, // Trimming leading/trailing whitespace
+    trim: true, 
   },
   options: {
     type: [String],
     required: true,
     validate: {
       validator: function (v: string[]) {
-        return v.length === 4; // Ensure there are exactly 4 options
+        return v.length === 4; 
       },
-      message: "Options must contain exactly 4 values", // Custom error message
+      message: "Options must contain exactly 4 values", 
     },
   },
   answer: {
     type: String,
     required: true,
-    trim: true, // Trimming leading/trailing whitespace
+    trim: true, 
   },
 });
 
-// Create the Mongoose model based on the schema
+
 const QuizModel = mongoose.models.Quiz || mongoose.model<Quiz>("Quiz", quizSchema);
 
 export default QuizModel;

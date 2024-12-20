@@ -8,7 +8,7 @@ let cachedDb: any = null;
 
 export async function connectToDatabase() {
   if (cachedClient && cachedDb) {
-    return { client: cachedClient, db: cachedDb }; // cached connection
+    return { client: cachedClient, db: cachedDb }; 
   }
 
 
